@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity
                 .setReadLocatorListener(this)
                 .setOnClosedListener(this);
 
-        getHighlightsAndSave();
+//        getHighlightsAndSave();
 
         findViewById(R.id.btn_raw).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,14 +114,14 @@ public class HomeActivity extends AppCompatActivity
             public void run() {
                 ArrayList<HighLight> highlightList = null;
                 ObjectMapper objectMapper = new ObjectMapper();
-//                try {
-////                    highlightList = objectMapper.readValue(
-////                            loadAssetTextAsString("highlights/highlights_data.json"),
-////                            new TypeReference<ArrayList<HighLight>>() {
-////                            });
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    highlightList = objectMapper.readValue(
+                            loadAssetTextAsString("highlights/highlights_data.json"),
+                            new TypeReference<ArrayList<HighLight>>() {
+                            });
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
                 if (highlightList == null) {
                     folioReader.saveReceivedHighLights(highlightList, new OnSaveHighlight() {

@@ -22,6 +22,7 @@ import com.folioreader.ui.base.SaveReceivedHighlightTask;
 import com.folioreader.util.OnHighlightListener;
 import com.folioreader.util.ReadLocatorListener;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -245,7 +246,7 @@ public class FolioReader {
         return singleton;
     }
 
-    public void saveReceivedHighLights(List<com.folioreader.model.HighLight> highlights,
+    public void saveReceivedHighLights(ArrayList<HighLight> highlights,
                                        OnSaveHighlight onSaveHighlight) {
         new SaveReceivedHighlightTask(onSaveHighlight, highlights).execute();
     }

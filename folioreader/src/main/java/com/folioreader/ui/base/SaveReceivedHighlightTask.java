@@ -18,6 +18,7 @@ public class SaveReceivedHighlightTask extends AsyncTask<Void, Void, Void> {
     private List<HighLight> highLights;
 
     public SaveReceivedHighlightTask(OnSaveHighlight onSaveHighlight,
+
                                      List<HighLight> highLights) {
         this.onSaveHighlight = onSaveHighlight;
         this.highLights = highLights;

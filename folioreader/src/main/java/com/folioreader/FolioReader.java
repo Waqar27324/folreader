@@ -1,5 +1,5 @@
 package com.folioreader;
-
+import com.folioreader.model.HighLight;
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -245,7 +245,7 @@ public class FolioReader {
         return singleton;
     }
 
-    public void saveReceivedHighLights(List<HighLight> highlights,
+    public void saveReceivedHighLights(List<com.folioreader.model.HighLight> highlights,
                                        OnSaveHighlight onSaveHighlight) {
         new SaveReceivedHighlightTask(onSaveHighlight, highlights).execute();
     }

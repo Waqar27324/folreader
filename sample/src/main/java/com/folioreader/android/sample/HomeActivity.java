@@ -117,7 +117,7 @@ public class HomeActivity extends AppCompatActivity
                 try {
                     highlightList = objectMapper.readValue(
                             loadAssetTextAsString("highlights/highlights_data.json"),
-                            new TypeReference<List<HighlightData>>() {
+                            new TypeReference<ArrayList<HighLight>>() {
                             });
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -134,7 +134,6 @@ public class HomeActivity extends AppCompatActivity
             }
         }).start();
     }
-
     private String loadAssetTextAsString(String name) {
         BufferedReader in = null;
         try {
